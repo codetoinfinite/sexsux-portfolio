@@ -1,0 +1,39 @@
+IZANAMI SITE MIRROR — PRIVATE STUDY/REFERENCE COPY
+==================================================
+Source:   https://izanami-official.com/
+Mirrored: 2026-07-18
+Method:   byte-exact mirror (all 138 files sha256-verified identical to live site)
+
+All design, code, imagery, and text remain the copyright of the site owner.
+Do not republish or redistribute as-is.
+
+RUN LOCALLY
+-----------
+The site uses absolute paths and fetch-based page transitions, so it needs a
+local server (file:// will not work):
+
+    cd izanami-clone
+    python3 -m http.server 8000
+    open http://localhost:8000/
+
+CONTENTS
+--------
+21 pages  : EN (/, /company/, /contact/, /philosophy/, /privacy/, /projects/
+            + school, craft, craft-space, retreat) + full /ja/ Japanese mirror
+            + 404.html
+117 assets: /assets/css (1 bundle), /assets/js (1 Vite bundle — all animations,
+            canvas/WebGL, Swup-style page transitions, Alpine form logic,
+            webfontloader), /assets/img (106 webp + png icons), /assets/font
+            (Satoshi woff), favicon.ico/svg
+
+EXTERNAL AT RUNTIME (need internet; site works fine without them except fonts)
+------------------------------------------------------------------------------
+1. Google Fonts: Cinzel, Playfair Display, Shippori Mincho (SIL OFL licensed).
+   Offline fallback archived in assets/font/google/fonts.css (128 woff2 files,
+   URLs rewritten local). Not wired in, to keep the mirror byte-exact.
+   To go fully offline, add to each page <head>:
+       <link rel="stylesheet" href="/assets/font/google/fonts.css">
+2. Google Analytics gtag.js (G-2SL94CX264) — fails silently offline.
+   Remove the two <script> tags in <head> before any reuse.
+3. Contact form POSTs to /api/contact.php — server-side PHP, not mirrorable;
+   submissions fail locally by design.

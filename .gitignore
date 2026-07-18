@@ -1,0 +1,14 @@
+# local tooling / assistant config
+.claude/
+*.local.json
+
+# reference clone (not for publication)
+izanami-clone/
+
+# exceeds GitHub 100MB file limit
+kalakhatta.pdf
+
+# system junk
+.DS_Store
+nohup.out
+*.log
