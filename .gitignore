@@ -1,5 +1,4 @@
-# local tooling / assistant config
-.claude/
+# local tooling
 *.local.json
 
 # reference clone (not for publication)
